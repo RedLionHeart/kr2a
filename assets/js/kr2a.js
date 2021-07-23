@@ -177,7 +177,7 @@ $('.mail').on('blur', function () {
 $('.name').on('blur', function () {
     var name = this
     console.log(name);
-    if (name.value.match(/^[\D]*([-][\D]*)?\s[\D]*\s[\D]*$/)) {
+    if (name.value.match(/^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$/)) {
         $(this).addClass("valid");
         $(this).removeClass("invalid");
     } else {
@@ -223,7 +223,7 @@ var load = new bootstrap.Modal(document.getElementById('formModalDownload'), {
 //     load.hide()
 // });
 
-$('.ajax-form button').click(function () {
+$('.ajax-form').submit(function () {
     $.ajax({
         url: myajax.url_send,
         data: $('.modal').serialize(),
@@ -232,7 +232,6 @@ $('.ajax-form button').click(function () {
             if(data === 'ok'){
                 thanks.show();
             }
-            console.log(data);
         },
         error: function (data) {
             alert("Данные не отправленны");
@@ -240,18 +239,18 @@ $('.ajax-form button').click(function () {
     });
 });
 
-$('#formModalBuy button').click(function () {
-    load.show()
-    // $.ajax({
-    //     url: './js/action_ajax_form.php',
-    //     data: $('.modal').serialize(),
-    //     type: 'POST',
-    //     success: function (data) {
-    //         alert("Данные отправленны")
-    //         load.show()
-    //     },
-    //     error: function(data) { // Данные не отправлены
-    //         alert("Данные не отправленны")
-    //     }
-    // });
+$('#formModalBuy').submit(function () {
+    $.ajax({
+        url: './js/action_ajax_form.php',
+        data: $('.modal').serialize(),
+        type: 'POST',
+        success: function (data) {
+            if(data === 'ok'){
+                load.show();
+            }
+        },
+        error: function(data) { // Данные не отправлены
+            alert("Данные не отправленны")
+        }
+    });
 });

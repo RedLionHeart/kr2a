@@ -91,7 +91,7 @@
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" placeholder="Фамилия Имя Отчество*" name="name" required>
+                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" pattern="(^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$)" placeholder="Фамилия Имя Отчество*" name="name" required>
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
@@ -115,7 +115,7 @@
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-zA-Z]{2,6})" id="mail" placeholder="Email*" name="mail" required>
+                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail" required>
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
@@ -144,7 +144,7 @@
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" placeholder="Фамилия Имя Отчество*" name="name" required>
+                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" pattern="(^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$)" placeholder="Фамилия Имя Отчество*" name="name" required>
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
@@ -168,7 +168,7 @@
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-zA-Z]{2,6})" id="mail" placeholder="Email*" name="mail" required>
+                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail" required>
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
@@ -176,7 +176,7 @@
                             </div>
                         </div>
                         <p>Поля, помеченные <span>*</span>, являются обязательными для заполнения</p>
-                        <button type="submit" class="button-red" data-bs-toggle="modal" data-bs-target="#formModalRequest">Отправить</button>
+                        <button type="submit" class="button-red">Отправить</button>
                     </form>
                 </div>
             </div>
