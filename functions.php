@@ -262,3 +262,15 @@ function register_post_type_questions(){
     ];
     register_post_type( 'questions', $args );
 }
+
+add_action( 'wp_enqueue_scripts', 'myajax_data', 99 );
+function myajax_data(){
+
+    wp_localize_script( 'kr2a-script', 'myajax',
+        array(
+            'url' => admin_url('admin-ajax.php'),
+            'url_send' => get_template_directory_uri() . '/assets/js/action_ajax_form.php'
+        )
+    );
+
+}
