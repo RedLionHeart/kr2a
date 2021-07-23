@@ -63,8 +63,8 @@ get_header();
             <div class="img-rupes">
                 <!--            <img src="<?= get_template_directory_uri() ?>/assets/img/rupes.png">-->
                 <picture class="border-paper">
-                    <source srcset="img/rupes_mob.png" media="(max-width: 991px)">
-                    <img alt="samsung" src="<?= get_template_directory_uri() ?>/assets/img/rupes.png">
+                    <source srcset="<?= get_template_directory_uri() ?>/assets/img/rupes_mob.png" media="(max-width: 991px)">
+                    <img src="<?= get_template_directory_uri() ?>/assets/img/rupes.png">
                 </picture>
             </div>
             <div class="d-flex flex-column txt-rupes">
@@ -162,8 +162,8 @@ get_header();
             <div class="d-flex flex-column box-chart" id="box-chart">
                 <div class="img-chart">
                     <picture class="border-paper">
-                        <source srcset="img/chart_mob.svg" media="(max-width: 700px)">
-                        <img alt="samsung" src="<?= get_template_directory_uri() ?>/assets/img/chart.svg">
+                        <source srcset="<?= get_template_directory_uri() ?>/assets/img/chart_mob.svg" media="(max-width: 700px)">
+                        <img src="<?= get_template_directory_uri() ?>/assets/img/chart.svg">
                     </picture>
                 </div>
                 <div class="d-flex justify-content-between description-chart">
@@ -185,14 +185,25 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="box-video">
+    <section class="video-container">
         <div class="d-flex margin">
             <div class="d-flex flex-column justify-content-center description-video">
                 <h1 class="h1">Rupes KR2A</h1>
                 <p class="text-medium-16">основные узлы и характеристики</p>
             </div>
             <div class="box-video">
-
+                <div class="video__link">
+                    <picture>
+                        <source srcset="https://i.ytimg.com/vi_webp/4JS70KB9GS0/maxresdefault.webp" type="image/webp">
+                        <img class="video__media" src="https://i.ytimg.com/vi/4JS70KB9GS0/maxresdefault.jpg">
+                    </picture>
+                </div>
+                <button class="video__button" aria-label="запустить видео">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="31.5" stroke="white"/>
+                        <path d="M37 32.5L29.5 36.3971L29.5 28.6029L37 32.5Z" fill="white"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
@@ -359,7 +370,7 @@ get_header();
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" placeholder="Фамилия Имя Отчество*" name="name" required>
+                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" pattern="(^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$)" id="name" placeholder="Фамилия Имя Отчество*" name="name" required>
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
@@ -383,7 +394,7 @@ get_header();
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-zA-Z]{2,6})" id="mail" placeholder="Email*" name="mail" required>
+                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail" required>
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
