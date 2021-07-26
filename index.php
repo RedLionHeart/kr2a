@@ -193,10 +193,7 @@ get_header();
             </div>
             <div class="box-video">
                 <div class="video__link">
-                    <picture>
-                        <source srcset="https://i.ytimg.com/vi_webp/4JS70KB9GS0/maxresdefault.webp" type="image/webp">
                         <img class="video__media" src="https://i.ytimg.com/vi/4JS70KB9GS0/maxresdefault.jpg">
-                    </picture>
                 </div>
                 <button class="video__button" aria-label="запустить видео">
                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -210,7 +207,7 @@ get_header();
     <section class="download-specifications">
         <div class="margin">
             <div class="box-arrow">
-                <button class="button-white" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать лист технических характеристик Rupes KR2A</button>
+                <button class="button-white button-big" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать лист технических характеристик Rupes KR2A</button>
                 <div class="arrow-red">
                     <img src="<?= get_template_directory_uri() ?>/assets/img/arrow_red.svg">
                 </div>
@@ -250,7 +247,7 @@ get_header();
     <section class="discount">
         <div class="margin">
             <div class="box-arrow">
-                <a class="button-red">Получить скидку при заказе через сайт</a>
+                <a class="button-red button-big">Получить скидку при заказе через сайт</a>
                 <div class="arrow-red">
                     <img src="<?= get_template_directory_uri() ?>/assets/img/arrow_red.svg">
                 </div>
