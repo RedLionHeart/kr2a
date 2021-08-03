@@ -3,6 +3,9 @@ html * {
   padding: 0;
   margin: 0; }
 
+html {
+  scroll-behavior: auto; }
+
 body {
   background: #F0F0F0; }
 
@@ -48,11 +51,6 @@ button {
   background: #F0F0F0;
   color: #EE1C25; }
 
-.button-red:focus {
-  background: #F0F0F0;
-  color: #828282;
-  border: 2px solid #828282; }
-
 .button-white {
   cursor: pointer;
   background: transparent;
@@ -74,11 +72,6 @@ button {
   background: #BA012F;
   color: white;
   border: 2px solid #BA012F; }
-
-.button-white:focus {
-  background: #F0F0F0;
-  color: #828282;
-  border: 2px solid #828282; }
 
 .button-big {
   width: 676px;
