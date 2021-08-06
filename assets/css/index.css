@@ -668,12 +668,10 @@ header {
   width: 676px;
   height: 400px;
   position: relative; }
-  @media screen and (max-width: 1440px) {
-    .box-video {
-      height: auto; } }
   @media screen and (max-width: 991px) {
     .box-video {
-      width: 100%; } }
+      width: 100%;
+      height: 200px; } }
   .box-video .video__link {
     cursor: pointer;
     width: 100%;
@@ -759,7 +757,26 @@ header {
   .reviews .margin .box-video {
     margin-bottom: 32px;
     width: 100%;
-    height: auto; }
+    height: 0;
+    padding-top: 56.25%; }
+    @media screen and (max-width: 991px) {
+      .reviews .margin .box-video {
+        height: 183px; } }
+    .reviews .margin .box-video .video__link {
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .reviews .margin .box-video .video__link img {
+        position: absolute;
+        top: 0;
+        left: 0; }
+    .reviews .margin .box-video .video__media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none; }
   .reviews .margin .box-swiper-pagination {
     margin-bottom: 20px; }
   .reviews .margin .swiper-pagination {
