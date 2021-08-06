@@ -1,6 +1,10 @@
 const swiper1 = new Swiper('.preview-swiper .swiper-container', {
     slidesPerView: 1,
     spaceBetween: 30,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
     navigation: {
         nextEl: '.button-slide-next',
         prevEl: '.button-slide-prev',
@@ -85,7 +89,6 @@ $(".btn-secondary").click(function () {
 
 $('nav a, .button-up a').click(function () {
     let scroll_el = $(this).attr('href');
-    console.log(scroll_el)
     if ($(scroll_el).length !== 0) {
         $('html, body').animate({
             scrollTop: $(scroll_el).offset().top - 100
@@ -140,13 +143,14 @@ $('.button-collapse').click(function () {
 //     }
 // };
 
-$('.input-mask__phone').inputmask('+375 (99) 999-99-99');
+// $('.input-mask__phone').inputmask('+375 (99) 999-99-99');
 $('.input-mask__mail').inputmask({alias: "email"});
 
 $('.phone').on('blur', function () {
     var phone = this
     console.log(phone);
-    if (phone.value.match(/\+375\s?[\(]{0,1}(25|29|33|44)[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/)) {
+    // if (phone.value.match(/\+375\s?[\(]{0,1}(25|29|33|44)[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/)) {
+    if (phone.value.match(/\+?[0-9]{4,}/)) {
         $(this).addClass("valid");
         $(this).removeClass("invalid");
     } else {
@@ -178,7 +182,8 @@ $('.mail').on('blur', function () {
 $('.name').on('blur', function () {
     var name = this
     console.log(name);
-    if (name.value.match(/^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$/)) {
+    // if (name.value.match(/^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$/)) {
+    if (name.value.match(/[а-яА-Яa-zA-z]+/)) {
         $(this).addClass("valid");
         $(this).removeClass("invalid");
     } else {
@@ -191,17 +196,25 @@ $('.name').on('blur', function () {
     }
 });
 
-$('.country, .organization').on('blur', function () {
+$('.country').on('blur', function () {
     var country = this
     console.log(country);
-    var organization = this
-    console.log(organization);
+    if (country.value.match(/[а-яА-Яa-zA-z]+/)) {
+        $(this).addClass("valid");
+        $(this).removeClass("invalid");
+    } else {
+        $(this).addClass("invalid");
+        $(this).removeClass("valid");
+    }
     if (country.value === "") {
         $(this).removeClass("valid");
         $(this).removeClass("invalid");
-    } else {
-        $(this).addClass("valid");
     }
+});
+
+$('.organization').on('blur', function () {
+    var organization = this
+    console.log(organization);
     if (organization.value === "") {
         $(this).removeClass("valid");
         $(this).removeClass("invalid");
@@ -219,47 +232,91 @@ var load = new bootstrap.Modal(document.getElementById('formModalDownload'), {
     keyboard: true
 });
 
-// $('.btn-close').click(function () {
-//     thanks.hide()
-//     load.hide()
+
+$('.ajax-form, #formModalBuy').submit(function () {
+    var namevalid    = $(this.getElementsByClassName('name')).val();
+    var countryvalid    = $(this.getElementsByClassName('country')).val();
+    var organizationvalid    = $(this.getElementsByClassName('organization')).val();
+    var phonevalid     = $(this.getElementsByClassName('phone')).val();
+    var mailvalid    = $(this.getElementsByClassName('mail')).val();
+    var checkvalid     = $(this.getElementsByClassName('consent')).is(":checked");
+    var formoptoin    = this.closest("form")
+    console.log(formoptoin)
+
+    if(namevalid && countryvalid && organizationvalid && phonevalid && mailvalid && checkvalid &&
+        phonevalid.match(/\+?[0-9]{4,}/) &&
+        namevalid.match(/[а-яА-Яa-zA-z]+/) &&
+        mailvalid.match(/\w+[.]?\w+?@\w+?\.[a-z]{2,4}/) &&
+        countryvalid.match(/[а-яА-Яa-zA-z]+/)){
+        let formData = new FormData(this);
+        $.ajax({
+            url: myajax.url_send,
+            data: formData,
+            type: 'POST',
+            success: function (data) {
+                if(data === 'ok'){
+                    if(formoptoin.classList.contains('ajax-form')){
+                        thanks.show();
+                    } else {
+                        load.show();
+                    }
+                }
+                },
+            error: function (data) {
+                alert("Данные не отправленны");
+            }
+        });
+    } else {
+        console.log('не отправляем');
+    }
+    return false;
+});
+
+
+
+function check() {
+    var consent = document.getElementsByClassName('consent');
+    for (var i = 0; i < consent.length; i++) {
+        var form = consent[i].closest("form")
+        if (consent[i].checked)
+            form.querySelector("button").disabled = '';
+        else form.querySelector("button").disabled = 'disabled';
+    }
+}
+
+// $.ajax({
+//     url: myajax.url_send,
+//     data: $('.modal').serialize(),
+//     type: 'POST',
+//     success: function (data) {
+//         if(data === 'ok'){
+//             thanks.show();
+//         }
+//     },
+//     error: function (data) {
+//         alert("Данные не отправленны");
+//     }
 // });
 
-$('.ajax-form').submit(function () {
-    $.ajax({
-        url: myajax.url_send,
-        data: $('.modal').serialize(),
-        type: 'POST',
-        success: function (data) {
-            if(data === 'ok'){
-                thanks.show();
-            }
-        },
-        error: function (data) {
-            alert("Данные не отправленны");
-        }
-    });
-});
-
-$('#formModalBuy').submit(function () {
-    $.ajax({
-        url: './js/action_ajax_form.php',
-        data: $('.modal').serialize(),
-        type: 'POST',
-        success: function (data) {
-            if(data === 'ok'){
-                load.show();
-            }
-        },
-        error: function(data) { // Данные не отправлены
-            alert("Данные не отправленны")
-        }
-    });
-});
+// $('#formModalBuy').submit(function () {
+//     $.ajax({
+//         url: './js/action_ajax_form.php',
+//         data: $('.modal').serialize(),
+//         type: 'POST',
+//         success: function (data) {
+//             if(data === 'ok'){
+//                 load.show();
+//             }
+//         },
+//         error: function(data) { // Данные не отправлены
+//             alert("Данные не отправленны")
+//         }
+//     });
+// });
 
 // function findVideos() {
 let videos = document.querySelectorAll('.box-video');
 
-console.log(videos)
 for (let i = 0; i < videos.length; i++) {
     this.setupVideo(videos[i]);
 }

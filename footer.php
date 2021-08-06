@@ -42,29 +42,40 @@
                 </ul>
             </nav>
             <div class="d-flex flex-column list-link">
-                <a href="#">Скачать лист технических характеристик Rupes KR2A</a>
-                <a href="#">Скачать дополнительную информацию</a>
-                <a href="#">Стоимость установки в вашем регионе</a>
+                <a target="_blank" href="https://truefactory.expert/oborydovanie/istoricheskie-stili/avtonomnaya-ustanovka-pyleudaleniya-rupes-kr2a-tehnicheskie-harakteristiki/ ">Скачать лист технических характеристик Rupes KR2A</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать дополнительную информацию</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#formModalRequest">Стоимость установки в вашем регионе</a>
             </div>
             <div class="d-flex flex-column tel">
                 <p class="text-bold-18">Контакты</p>
-                <p>Телефоны:</p>
-                <div class="d-flex">
+                <p>Телефон</p>
+                <div class="">
                     <a href="tel:<?php the_field('номер_телефона_в_российской_федерации', 'options');?>"><?php the_field('номер_телефона_в_российской_федерации', 'options');?></a>
-                    <p>в Российской Федерации</p>
+                    <p>в Российской Федерации, Украине, Республике Беларусь, Республике Казахстан</p>
                 </div>
-                <div class="d-flex">
-                    <a href="tel:<?php the_field('номер_телефона_в_украине', 'options');?>"><?php the_field('номер_телефона_в_украине', 'options');?></a>
-                    <p>в Украине</p>
+                <div class="d-flex justify-content-between ico-box">
+                    <!--                                <a target="_blank" href="https://t.me/valentinazelenkevich">-->
+                    <!--                                    <img src="--><?//= get_template_directory_uri() ?><!--/assets/img/telegram.svg"-->
+                    <!--                                </a>-->
+                    <a target="_blank" href="viber://chat?number=%2B375296605690">
+                        <img src="<?= get_template_directory_uri() ?>/assets/img/viber.svg">
+                    </a>
+                    <a target="_blank" href="https://wa.me/+375296605690">
+                        <img src="<?= get_template_directory_uri() ?>/assets/img/whatsapp.svg">
+                    </a>
                 </div>
-                <div class="d-flex">
-                    <a href="tel:<?php the_field('номер_телефона_в_республике_беларусь', 'options');?>"><?php the_field('номер_телефона_в_республике_беларусь', 'options');?></a>
-                    <p>в Республике Беларусь</p>
-                </div>
-                <div class="d-flex">
-                    <a href="tel:<?php the_field('номер_телефона_в_в_республике_казахстан', 'options');?>"><?php the_field('номер_телефона_в_в_республике_казахстан', 'options');?></a>
-                    <p>в Республике Казахстан</p>
-                </div>
+<!--                <div class="d-flex">-->
+<!--                    <a href="tel:--><?php //the_field('номер_телефона_в_украине', 'options');?><!--">--><?php //the_field('номер_телефона_в_украине', 'options');?><!--</a>-->
+<!--                    <p>в Украине</p>-->
+<!--                </div>-->
+<!--                <div class="d-flex">-->
+<!--                    <a href="tel:--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--">--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--</a>-->
+<!--                    <p>в Республике Беларусь</p>-->
+<!--                </div>-->
+<!--                <div class="d-flex">-->
+<!--                    <a href="tel:--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--">--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--</a>-->
+<!--                    <p>в Республике Казахстан</p>-->
+<!--                </div>-->
                 <div class="d-flex flex-column mail-mob">
                     <p class="text-bold-18">E-mail</p>
                     <a href="mailto:<?php the_field('e-mail', 'options');?>"><?php the_field('e-mail', 'options');?></a>
@@ -87,43 +98,47 @@
                 <div class="d-flex flex-column flexform">
                     <h2 class="h2">Скачать файл</h2>
                     <p>Для скачивания документа, пожалуйста, заполните форму</p>
-                    <form action="/" class="d-flex flex-column" method="post">
+                    <form action="/" class="d-flex flex-column formbuy" method="post">
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" pattern="(^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$)" placeholder="Фамилия Имя Отчество*" name="name" required>
+                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" pattern="([а-яА-Яa-zA-z]+)" id="name" placeholder="Фамилия Имя Отчество*" name="name">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile country" type="text"  autocomplete="off" id="country" placeholder="Страна*" name="country" required>
+                                    <input class="entryfield text-mobile country" type="text"  autocomplete="off" id="country" placeholder="Страна*" name="country">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile organization" type="text"  autocomplete="off" id="organization" placeholder="Организация*" name="organization" required>
+                                    <input class="entryfield text-mobile organization" type="text"  autocomplete="off" id="organization" placeholder="Организация*" name="organization">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__phone text-mobile phone" pattern="\+375\s?[\(]{0,1}(25|29|33|44)[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" type="text" id="phone" placeholder="Телефон*" name="phone" required>
+                                    <input class="entryfield input-mask__phone text-mobile phone" type="text" id="phone" placeholder="Телефон*" name="phone">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail" required>
+                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+[.]?\w+?@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
+                                <label class="check-ico" id="variable">
+                                    <input class="consent" type="checkbox" id="consent" value="" autocomplete="off" name="choice">
+                                    <span class="d-flex align-items-center text-medium-16">Я согласен с Политикой конфиденциальности</span>
+                                </label>
                             </div>
                         </div>
                         <p>Поля, помеченные <span>*</span>, являются обязательными для заполнения</p>
-                        <button type="submit" class="button-red" data-bs-toggle="modal" data-bs-target="#formModalBuy">Отправить</button>
+                        <button type="submit" name="submit" class="button-red" data-bs-toggle="modal" data-bs-target="#formModalBuy" disabled>Отправить</button>
                     </form>
                 </div>
             </div>
@@ -144,39 +159,43 @@
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" id="name" pattern="(^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$)" placeholder="Фамилия Имя Отчество*" name="name" required>
+                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" pattern="([а-яА-Яa-zA-z]+)" id="name" placeholder="Фамилия Имя Отчество*" name="name">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile country" type="text"  autocomplete="off" id="country" placeholder="Страна*" name="country" required>
+                                    <input class="entryfield text-mobile country" type="text"  autocomplete="off" id="country" placeholder="Страна*" name="country">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile organization" type="text"  autocomplete="off" id="organization" placeholder="Организация*" name="organization" required>
+                                    <input class="entryfield text-mobile organization" type="text"  autocomplete="off" id="organization" placeholder="Организация*" name="organization">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__phone text-mobile phone" pattern="\+375\s?[\(]{0,1}(25|29|33|44)[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" type="text" id="phone" placeholder="Телефон*" name="phone" required>
+                                    <input class="entryfield input-mask__phone text-mobile phone" type="text" id="phone" placeholder="Телефон*" name="phone">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail" required>
+                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+[.]?\w+?@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
+                                <label class="check-ico" id="variable">
+                                    <input class="consent" type="checkbox" id="consent" value="" autocomplete="off" name="choice">
+                                    <span class="d-flex align-items-center text-medium-16">Я согласен с Политикой конфиденциальности</span>
+                                </label>
                             </div>
                         </div>
                         <p>Поля, помеченные <span>*</span>, являются обязательными для заполнения</p>
-                        <button type="submit" class="button-red">Отправить</button>
+                        <button type="submit" name="submit" class="button-red" disabled>Отправить</button>
                     </form>
                 </div>
             </div>

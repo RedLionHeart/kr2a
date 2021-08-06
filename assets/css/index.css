@@ -1,10 +1,11 @@
 html * {
   outline: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-feature-settings: "pnum" on, "lnum" on; }
 
 html {
-  scroll-behavior: auto; }
+  scroll-behavior: auto !important; }
 
 body {
   background: #F0F0F0; }
@@ -44,12 +45,15 @@ button {
   text-align: center; }
 
 .button-red:hover {
-  background: transparent;
+  background: white;
   color: #EE1C25; }
 
 .button-red:active {
   background: #F0F0F0;
   color: #EE1C25; }
+
+.arrow-red {
+  pointer-events: none; }
 
 .button-white {
   cursor: pointer;
@@ -245,7 +249,8 @@ header {
   z-index: 999;
   position: fixed;
   width: 100vw;
-  background-color: #F0F0F0; }
+  background: rgba(239, 238, 238, 0.5);
+  backdrop-filter: blur(20px); }
   @media screen and (max-width: 991px) {
     header {
       padding: 16px 0; } }
@@ -450,10 +455,6 @@ header {
   bottom: -12px;
   left: 2px; }
 
-@media screen and (max-width: 991px) {
-  .arrow-red {
-    display: none !important; } }
-
 .benefits {
   background-image: url("../img/backgradient.png");
   background-repeat: no-repeat;
@@ -475,8 +476,23 @@ header {
       .benefits .box-chart {
         margin: 64px 0 0; } }
     .benefits .box-chart .img-chart {
+      position: relative;
       margin: 0 auto;
       filter: drop-shadow(2px -1px 18px rgba(78, 78, 78, 0.1)); }
+      .benefits .box-chart .img-chart .arrow-red {
+        position: absolute;
+        top: 19px;
+        left: 960px;
+        transform: rotate(180deg);
+        transition: 0.5s; }
+        .benefits .box-chart .img-chart .arrow-red img {
+          display: block; }
+        @media screen and (max-width: 700px) {
+          .benefits .box-chart .img-chart .arrow-red {
+            display: none; } }
+    .benefits .box-chart .img-chart:hover .arrow-red {
+      top: 22px;
+      left: 955px; }
     .benefits .box-chart .description-chart {
       width: 1027px;
       margin: 40px auto 0; }
@@ -646,31 +662,33 @@ header {
         text-align: center; } }
     .video-container .margin .description-video .h1 {
       margin-bottom: 12px; }
-  .video-container .margin .box-video {
-    background: black;
-    width: 676px;
-    height: 400px;
-    position: relative; }
-    @media screen and (max-width: 991px) {
-      .video-container .margin .box-video {
-        width: 100%; } }
-    .video-container .margin .box-video .video__link {
-      cursor: pointer;
-      width: 100%;
-      height: 100%; }
-    .video-container .margin .box-video .video__button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 68px;
-      height: 48px;
-      border: none;
-      background-color: transparent; }
-    .video-container .margin .box-video .video__media {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
+
+.box-video {
+  background: black;
+  width: 676px;
+  height: 400px;
+  position: relative; }
+  @media screen and (max-width: 1440px) {
+    .box-video {
+      height: auto; } }
+  @media screen and (max-width: 991px) {
+    .box-video {
+      width: 100%; } }
+  .box-video .video__link {
+    cursor: pointer;
+    width: 100%;
+    height: 100%; }
+  .box-video .video__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-color: transparent; }
+  .box-video .video__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 .download-specifications, .discount {
   padding-bottom: 100px; }
@@ -679,7 +697,7 @@ header {
       padding-bottom: 64px; } }
   .download-specifications .box-arrow, .discount .box-arrow {
     position: relative;
-    width: fit-content;
+    width: min-content;
     margin: 0 auto; }
     .download-specifications .box-arrow .arrow-red, .discount .box-arrow .arrow-red {
       position: absolute;
@@ -687,6 +705,9 @@ header {
       bottom: -30px;
       transform: rotate(-90deg);
       transition: 0.5s; }
+      @media screen and (max-width: 991px) {
+        .download-specifications .box-arrow .arrow-red, .discount .box-arrow .arrow-red {
+          display: none !important; } }
   .download-specifications .box-arrow:hover .arrow-red, .discount .box-arrow:hover .arrow-red {
     right: -18px;
     bottom: -18px; }
@@ -721,6 +742,9 @@ header {
   right: 0;
   bottom: -30px;
   left: -30px; }
+  @media screen and (max-width: 991px) {
+    .discount .arrow-red {
+      display: none !important; } }
 .discount .box-arrow:hover .arrow-red {
   left: -18px;
   bottom: -18px; }
@@ -732,8 +756,10 @@ header {
   .reviews .margin .h2 {
     text-align: center;
     margin: 52px 0; }
-  .reviews .margin .img-slide {
-    margin-bottom: 32px; }
+  .reviews .margin .box-video {
+    margin-bottom: 32px;
+    width: 100%;
+    height: auto; }
   .reviews .margin .box-swiper-pagination {
     margin-bottom: 20px; }
   .reviews .margin .swiper-pagination {
@@ -751,7 +777,7 @@ header {
   padding: 100px 0; }
   .questions .box-arrow {
     position: relative;
-    width: fit-content;
+    width: min-content;
     margin: 0 auto 72px; }
     @media screen and (max-width: 991px) {
       .questions .box-arrow {
@@ -931,8 +957,7 @@ header {
       padding: 72px 30px 167px 40px; } }
   @media screen and (max-width: 830px) {
     .form-contacts .contacts, .modal .contacts {
-      padding: 50px 0;
-      align-items: center; } }
+      padding: 50px 40px; } }
   .form-contacts .contacts .h2, .modal .contacts .h2 {
     margin-bottom: 52px;
     color: white; }
@@ -943,27 +968,62 @@ header {
         margin-bottom: 30px; } }
     .form-contacts .contacts .tel-mail .tel div, .modal .contacts .tel-mail .tel div {
       margin-bottom: 18px; }
+    .form-contacts .contacts .tel-mail .tel a, .modal .contacts .tel-mail .tel a {
+      color: white; }
+    .form-contacts .contacts .tel-mail .tel a:hover, .modal .contacts .tel-mail .tel a:hover {
+      color: white; }
+    .form-contacts .contacts .tel-mail .tel a + p, .modal .contacts .tel-mail .tel a + p {
+      color: white;
+      max-width: 220px; }
+  .form-contacts .contacts .tel-mail .mail a, .modal .contacts .tel-mail .mail a {
+    font-family: "Montserrat-Regular", sans-serif !important;
+    font-size: 14px !important;
+    line-height: 15px !important;
+    color: white; }
   .form-contacts .contacts .tel-mail .text-bold-18, .modal .contacts .tel-mail .text-bold-18 {
     color: white;
     margin-bottom: 15px; }
-  .form-contacts .contacts .tel-mail a, .modal .contacts .tel-mail a {
-    color: white;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-size: 14px;
-    line-height: 16px;
-    margin-right: 27px; }
-  .form-contacts .contacts .tel-mail a:hover, .modal .contacts .tel-mail a:hover {
-    color: white; }
-  .form-contacts .contacts .tel-mail a + p, .modal .contacts .tel-mail a + p {
-    font-family: "Raleway-Bold", sans-serif;
-    font-size: 14px;
-    line-height: 16px;
-    color: white; }
+.form-contacts .button-red:disabled, .modal .button-red:disabled {
+  color: #787878;
+  border-color: #787878;
+  background: transparent; }
+
+.ico-box {
+  width: 70px; }
+  .ico-box a {
+    margin: 0 !important; }
+
+.check-ico {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 30px; }
+  .check-ico input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    -webkit-appearance: auto;
+    left: 50%; }
+  .check-ico span::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    border: 2px solid #4F4F4F;
+    border-radius: 5px;
+    flex: 0 0 20px; }
+
+.check-ico > input:checked + span::before {
+  background-image: url("../img/checkicon.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-color: #EE1C25; }
 
 .button-up {
   padding: 40px 0 64px; }
   .button-up a {
-    width: fit-content;
+    width: min-content;
     margin: 0 auto; }
   .button-up .arrow-up {
     transition: 0.5s;
@@ -1014,6 +1074,9 @@ footer {
   @media screen and (max-width: 991px) {
     footer nav {
       margin-right: 30px; } }
+  @media screen and (max-width: 500px) {
+    footer nav {
+      margin-right: 0; } }
   footer nav, footer .list-link, footer .tel {
     margin-top: 24px; }
     footer nav li, footer .list-link li, footer .tel li {
@@ -1044,6 +1107,9 @@ footer {
   @media screen and (max-width: 991px) {
     footer .tel {
       margin-right: 30px; } }
+  @media screen and (max-width: 500px) {
+    footer .tel {
+      margin-right: 0; } }
   footer .tel p:nth-child(1) {
     color: #EE1C25;
     margin-bottom: 32px; }
@@ -1091,9 +1157,9 @@ footer {
     margin-bottom: 21px !important;
     display: block !important; }
   footer .mail-mob a, footer .mail a {
-    font-family: "Montserrat-Regular", sans-serif;
-    font-size: 14px;
-    line-height: 15px;
+    font-family: "Montserrat-Regular", sans-serif !important;
+    font-size: 14px !important;
+    line-height: 15px !important;
     color: #4F4F4F; }
 
 #formModalBuy .modal-dialog, #formModalRequest .modal-dialog, #formModalThanks .modal-dialog, #formModalDownload .modal-dialog {
@@ -1135,6 +1201,9 @@ footer {
       #formModalBuy .modal-dialog .modal-body .flexform .button-red, #formModalRequest .modal-dialog .modal-body .flexform .button-red, #formModalThanks .modal-dialog .modal-body .flexform .button-red, #formModalDownload .modal-dialog .modal-body .flexform .button-red {
         margin: 0 auto; }
 
+.entryfield:focus {
+  outline: none; }
+
 #formModalThanks .h5, #formModalDownload .h5 {
   text-align: center;
   margin-bottom: 52px; }
@@ -1148,3 +1217,30 @@ footer {
   margin-bottom: 12px; }
 #formModalThanks .flexform, #formModalDownload .flexform {
   align-items: center; }
+
+.form-contacts .tel a, footer .tel a {
+  color: #4F4F4F;
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 10px; }
+  @media screen and (max-width: 830px) {
+    .form-contacts .tel a, footer .tel a {
+      font-size: 16px;
+      line-height: 19px;
+      margin-right: 0 !important; } }
+.form-contacts .tel a:hover, footer .tel a:hover {
+  color: #4F4F4F; }
+.form-contacts .tel a + p, footer .tel a + p {
+  font-family: "Raleway-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #4F4F4F;
+  max-width: 305px; }
+  @media screen and (max-width: 830px) {
+    .form-contacts .tel a + p, footer .tel a + p {
+      max-width: 153px; } }
+.form-contacts .tel .mail a, footer .tel .mail a {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 17px; }

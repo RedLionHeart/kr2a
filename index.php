@@ -69,7 +69,7 @@ get_header();
             </div>
             <div class="d-flex flex-column txt-rupes">
                 <h3 class="h3-source">Турбина Rupes KR2A</h3>
-                <p class="text-medium-16">лучшее индустриальное решение для удаления шлифованной пыли</p>
+                <p class="text-medium-16">лучшее индустриальное решение для удаления шлифовальной пыли</p>
             </div>
         </div>
         <div class="margin">
@@ -165,6 +165,9 @@ get_header();
                         <source srcset="<?= get_template_directory_uri() ?>/assets/img/chart_mob.svg" media="(max-width: 700px)">
                         <img src="<?= get_template_directory_uri() ?>/assets/img/chart.svg">
                     </picture>
+                    <div class="arrow-red">
+                        <img src="<?= get_template_directory_uri() ?>/assets/img/arrow_red.svg">
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between description-chart">
                     <p class="text-medium-16"><span></span>В турбинах не используются электрические
@@ -179,9 +182,9 @@ get_header();
     </section>
     <section class="buy">
         <div class="margin">
-            <div class="d-flex justify-content-between">
-                <button class="button-red">Стоимость установки в вашем регионе</button>
-                <button class="button-white">Скачать дополнительную информацию</button>
+            <div class="d-flex justify-content-evenly">
+                <button class="button-red" data-bs-toggle="modal" data-bs-target="#formModalRequest">Стоимость установки в вашем регионе</button>
+                <button class="button-white" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать дополнительную информацию</button>
             </div>
         </div>
     </section>
@@ -193,7 +196,7 @@ get_header();
             </div>
             <div class="box-video">
                 <div class="video__link">
-                        <img class="video__media" src="https://i.ytimg.com/vi/4JS70KB9GS0/maxresdefault.jpg">
+                        <img class="video__media" src="https://i.ytimg.com/vi/cdf1OpL7-_4/maxresdefault.jpg">
                 </div>
                 <button class="video__button" aria-label="запустить видео">
                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +210,8 @@ get_header();
     <section class="download-specifications">
         <div class="margin">
             <div class="box-arrow">
-                <button class="button-white button-big" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать лист технических характеристик Rupes KR2A</button>
+<!--                <button class="button-white button-big" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать лист технических характеристик Rupes KR2A</button>-->
+                <a target="_blank" href="https://truefactory.expert/oborydovanie/istoricheskie-stili/avtonomnaya-ustanovka-pyleudaleniya-rupes-kr2a-tehnicheskie-harakteristiki/ " class="button-white button-big">Скачать лист технических характеристик Rupes KR2A</a>
                 <div class="arrow-red">
                     <img src="<?= get_template_directory_uri() ?>/assets/img/arrow_red.svg">
                 </div>
@@ -247,7 +251,7 @@ get_header();
     <section class="discount">
         <div class="margin">
             <div class="box-arrow">
-                <a class="button-red button-big">Получить скидку при заказе через сайт</a>
+                <button class="button-red button-big" data-bs-toggle="modal" data-bs-target="#formModalRequest">Получить скидку при заказе через сайт</button>
                 <div class="arrow-red">
                     <img src="<?= get_template_directory_uri() ?>/assets/img/arrow_red.svg">
                 </div>
@@ -283,8 +287,16 @@ get_header();
                                 <div class="swiper-slide">
 
                                     <div class="d-flex flex-column box-img">
-                                        <div class="img-slide">
-                                            <img src="<?= get_template_directory_uri() ?>/assets/img/swiper3slide.jpg">
+                                        <div class="box-video">
+                                            <div class="video__link">
+                                                <img class="video__media" src="https://i.ytimg.com/vi/iJHfxk8YR1o/maxresdefault.jpg">
+                                            </div>
+                                            <button class="video__button" aria-label="запустить видео">
+                                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="32" cy="32" r="31.5" stroke="white"/>
+                                                    <path d="M37 32.5L29.5 36.3971L29.5 28.6029L37 32.5Z" fill="white"/>
+                                                </svg>
+                                            </button>
                                         </div>
                                         <p class="text-bold-18"><?php the_title();?></p>
                                     </div>
@@ -367,61 +379,76 @@ get_header();
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" pattern="(^[\D]+([-][\D]+)?\s[\D]+\s[\D]+$)" id="name" placeholder="Фамилия Имя Отчество*" name="name" required>
+                                    <input class="entryfield text-mobile name" type="text"  autocomplete="off" pattern="([а-яА-Яa-zA-z]+)" id="name" placeholder="Фамилия Имя Отчество*" name="name">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile country" type="text"  autocomplete="off" id="country" placeholder="Страна*" name="country" required>
+                                    <input class="entryfield text-mobile country" type="text"  autocomplete="off" id="country" placeholder="Страна*" name="country">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield text-mobile organization" type="text"  autocomplete="off" id="organization" placeholder="Организация*" name="organization" required>
+                                    <input class="entryfield text-mobile organization" type="text"  autocomplete="off" id="organization" placeholder="Организация*" name="organization">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__phone text-mobile phone" pattern="\+375\s?[\(]{0,1}(25|29|33|44)[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" type="text" id="phone" placeholder="Телефон*" name="phone" required>
+                                    <input class="entryfield input-mask__phone text-mobile phone" type="text" id="phone" placeholder="Телефон*" name="phone">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <div class="input-valid">
-                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail" required>
+                                    <input class="entryfield input-mask__mail text-mobile mail" type="text" pattern="(\w+[.]?\w+?@\w+?\.[a-z]{2,4})" id="mail" placeholder="Email*" name="mail">
                                     <p>Please enter valid name</p>
                                     <img class="valid-img" src="<?= get_template_directory_uri() ?>/assets/img/valid.svg">
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
+                                <label class="check-ico" id="variable">
+                                    <input class="consent" type="checkbox" onclick="check();" id="consent" value="" autocomplete="off" name="choice" required>
+                                    <span class="d-flex align-items-center text-medium-16">Я согласен с Политикой конфиденциальности</span>
+                                </label>
                             </div>
                         </div>
-                        <button type="submit" class="button-red">Отправить</button>
+                        <button type="submit" name="submit" class="button-red" disabled>Отправить</button>
                     </form>
                 </div>
                 <div class="d-flex flex-column contacts">
                     <h2 class="h2">Контакты</h2>
                     <div class="d-flex flex-column tel-mail">
                         <div class="d-flex flex-column tel">
-                            <p class="text-bold-18">Телефоны:</p>
-                            <div class="d-flex">
+                            <p class="text-bold-18">Телефон</p>
+                            <div class="">
                                 <a href="tel:<?php the_field('номер_телефона_в_российской_федерации', 'options');?>"><?php the_field('номер_телефона_в_российской_федерации', 'options');?></a>
-                                <p>в Российской Федерации</p>
+                                <p>в Российской Федерации, Украине, Республике Беларусь, Республике Казахстан</p>
                             </div>
-                            <div class="d-flex">
-                                <a href="tel:<?php the_field('номер_телефона_в_украине', 'options');?>"><?php the_field('номер_телефона_в_украине', 'options');?></a>
-                                <p>в Украине</p>
+                            <div class="d-flex justify-content-between ico-box">
+<!--                                <a target="_blank" href="https://t.me/valentinazelenkevich">-->
+<!--                                    <img src="--><?//= get_template_directory_uri() ?><!--/assets/img/telegram.svg"-->
+<!--                                </a>-->
+                                <a target="_blank" href="viber://chat?number=%2B375296605690">
+                                    <img src="<?= get_template_directory_uri() ?>/assets/img/viber.svg">
+                                </a>
+                                <a target="_blank" href="https://wa.me/+375296605690">
+                                    <img src="<?= get_template_directory_uri() ?>/assets/img/whatsapp.svg">
+                                </a>
                             </div>
-                            <div class="d-flex">
-                                <a href="tel:<?php the_field('номер_телефона_в_республике_беларусь', 'options');?>"><?php the_field('номер_телефона_в_республике_беларусь', 'options');?></a>
-                                <p>в Республике Беларусь</p>
-                            </div>
-                            <div class="d-flex">
-                                <a href="tel:<?php the_field('номер_телефона_в_в_республике_казахстан', 'options');?>"><?php the_field('номер_телефона_в_в_республике_казахстан', 'options');?></a>
-                                <p>в Республике Казахстан</p>
-                            </div>
+<!--                            <div class="d-flex">-->
+<!--                                <a href="tel:--><?php //the_field('номер_телефона_в_украине', 'options');?><!--">--><?php //the_field('номер_телефона_в_украине', 'options');?><!--</a>-->
+<!--                                <p>в Украине</p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex">-->
+<!--                                <a href="tel:--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--">--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--</a>-->
+<!--                                <p>в Республике Беларусь</p>-->
+<!--                            </div>-->
+<!--                            <div class="d-flex">-->
+<!--                                <a href="tel:--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--">--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--</a>-->
+<!--                                <p>в Республике Казахстан</p>-->
+<!--                            </div>-->
                         </div>
                         <div class="d-flex flex-column mail">
                             <p class="text-bold-18">E-mail</p>
@@ -444,6 +471,7 @@ get_header();
             <p>Наверх</p>
         </a>
     </section>
+
 
 <?php
 

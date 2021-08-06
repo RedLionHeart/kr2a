@@ -2,7 +2,10 @@
   font-family: "Raleway-Bold";
   src: url("../fonts/Raleway-Bold.ttf") format("truetype"); }
 @font-face {
-  font-family: "SourceCodePro-Bold";
+  font-family: "Raleway-Regular";
+  src: url("../fonts/Raleway-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "SourceCodePro-Regular";
   src: url("../fonts/SourceCodePro-Bold.ttf") format("truetype"); }
 @font-face {
   font-family: "Montserrat-Regular";
@@ -10,6 +13,9 @@
 @font-face {
   font-family: "Montserrat-Light";
   src: url("../fonts/Montserrat-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
 @font-face {
   font-family: "SourceCodePro-Regular";
   src: url("../fonts/SourceCodePro-Regular.ttf") format("truetype"); }
