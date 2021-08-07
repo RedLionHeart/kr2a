@@ -283,13 +283,18 @@ get_header();
                                 ));
                                 ?>
                                 <?php foreach($reviews as $post):
-                                    setup_postdata($post)?>
+                                    setup_postdata($post);
+
+                                    $video_link = get_field('ссылка_на_youtube');
+                                    preg_match('/src="(.+?)"/', $video_link, $matches);
+                                    $src = $matches[1];
+                                    $cuted_url_video = parse_video_youtube($src); ?>
                                 <div class="swiper-slide">
 
                                     <div class="d-flex flex-column box-img">
                                         <div class="box-video">
                                             <div class="video__link">
-                                                <img class="video__media" src="https://i.ytimg.com/vi/iJHfxk8YR1o/maxresdefault.jpg">
+                                                <img class="video__media" src="https://i.ytimg.com/vi/<?php echo $cuted_url_video;?>/maxresdefault.jpg">
                                             </div>
                                             <button class="video__button" aria-label="запустить видео">
                                                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -423,32 +428,32 @@ get_header();
                         <div class="d-flex flex-column tel">
                             <p class="text-bold-18">Телефон</p>
                             <div class="">
-                                <a href="tel:<?php the_field('номер_телефона_в_российской_федерации', 'options');?>"><?php the_field('номер_телефона_в_российской_федерации', 'options');?></a>
+                                <?php $phone = get_field('номер_телефона_для_вызова', 'options');?>
+                                <a href="tel:<?= parse_phone_number($phone);?>"><?= $phone;?></a>
                                 <p>в Российской Федерации, Украине, Республике Беларусь, Республике Казахстан</p>
                             </div>
+                            <?php
+                            $telega = get_field('telegram', 'options');
+                            $viber = get_field('номер_viber', 'options');
+                            $whatsapp = get_field('номер_viber', 'options');
+                            ?>
                             <div class="d-flex justify-content-between ico-box">
-<!--                                <a target="_blank" href="https://t.me/valentinazelenkevich">-->
-<!--                                    <img src="--><?//= get_template_directory_uri() ?><!--/assets/img/telegram.svg"-->
-<!--                                </a>-->
-                                <a target="_blank" href="viber://chat?number=%2B375296605690">
+                                <?php if($telega):?>
+                                <a target="_blank" href="https://t.me/<?=$telega;?>">
+                                   <img src="<?= get_template_directory_uri() ?>/assets/img/telegram.svg"
+                                </a>
+                                <?php endif;?>
+                                <?php if($viber):?>
+                                <a target="_blank" href="viber://chat?number=%2B<?=$viber;?>">
                                     <img src="<?= get_template_directory_uri() ?>/assets/img/viber.svg">
                                 </a>
-                                <a target="_blank" href="https://wa.me/+375296605690">
+                                <?php endif;?>
+                                <?php if($whatsapp):?>
+                                <a target="_blank" href="https://wa.me/+<?=$whatsapp;?>">
                                     <img src="<?= get_template_directory_uri() ?>/assets/img/whatsapp.svg">
                                 </a>
+                                <?php endif;?>
                             </div>
-<!--                            <div class="d-flex">-->
-<!--                                <a href="tel:--><?php //the_field('номер_телефона_в_украине', 'options');?><!--">--><?php //the_field('номер_телефона_в_украине', 'options');?><!--</a>-->
-<!--                                <p>в Украине</p>-->
-<!--                            </div>-->
-<!--                            <div class="d-flex">-->
-<!--                                <a href="tel:--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--">--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--</a>-->
-<!--                                <p>в Республике Беларусь</p>-->
-<!--                            </div>-->
-<!--                            <div class="d-flex">-->
-<!--                                <a href="tel:--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--">--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--</a>-->
-<!--                                <p>в Республике Казахстан</p>-->
-<!--                            </div>-->
                         </div>
                         <div class="d-flex flex-column mail">
                             <p class="text-bold-18">E-mail</p>

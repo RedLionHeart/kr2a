@@ -9,6 +9,10 @@
  * @package kr2a
  */
 
+$telega = get_field('telegram', 'options');
+$viber = get_field('номер_viber', 'options');
+$whatsapp = get_field('номер_viber', 'options');
+
 ?>
 <footer>
     <div class="margin">
@@ -50,32 +54,27 @@
                 <p class="text-bold-18">Контакты</p>
                 <p>Телефон</p>
                 <div class="">
-                    <a href="tel:<?php the_field('номер_телефона_в_российской_федерации', 'options');?>"><?php the_field('номер_телефона_в_российской_федерации', 'options');?></a>
+                    <?php $phone = get_field('номер_телефона_для_вызова', 'options');?>
+                    <a href="tel:<?= parse_phone_number($phone);?>"><?= $phone;?></a>
                     <p>в Российской Федерации, Украине, Республике Беларусь, Республике Казахстан</p>
                 </div>
                 <div class="d-flex justify-content-between ico-box">
-                    <!--                                <a target="_blank" href="https://t.me/valentinazelenkevich">-->
-                    <!--                                    <img src="--><?//= get_template_directory_uri() ?><!--/assets/img/telegram.svg"-->
-                    <!--                                </a>-->
-                    <a target="_blank" href="viber://chat?number=%2B375296605690">
-                        <img src="<?= get_template_directory_uri() ?>/assets/img/viber.svg">
-                    </a>
-                    <a target="_blank" href="https://wa.me/+375296605690">
-                        <img src="<?= get_template_directory_uri() ?>/assets/img/whatsapp.svg">
-                    </a>
+                    <?php if($telega):?>
+                        <a target="_blank" href="https://t.me/<?=$telega;?>">
+                            <img src="<?= get_template_directory_uri() ?>/assets/img/telegram.svg"
+                        </a>
+                    <?php endif;?>
+                    <?php if($viber):?>
+                        <a target="_blank" href="viber://chat?number=%2B<?=$viber;?>">
+                            <img src="<?= get_template_directory_uri() ?>/assets/img/viber.svg">
+                        </a>
+                    <?php endif;?>
+                    <?php if($whatsapp):?>
+                        <a target="_blank" href="https://wa.me/+<?=$whatsapp;?>">
+                            <img src="<?= get_template_directory_uri() ?>/assets/img/whatsapp.svg">
+                        </a>
+                    <?php endif;?>
                 </div>
-<!--                <div class="d-flex">-->
-<!--                    <a href="tel:--><?php //the_field('номер_телефона_в_украине', 'options');?><!--">--><?php //the_field('номер_телефона_в_украине', 'options');?><!--</a>-->
-<!--                    <p>в Украине</p>-->
-<!--                </div>-->
-<!--                <div class="d-flex">-->
-<!--                    <a href="tel:--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--">--><?php //the_field('номер_телефона_в_республике_беларусь', 'options');?><!--</a>-->
-<!--                    <p>в Республике Беларусь</p>-->
-<!--                </div>-->
-<!--                <div class="d-flex">-->
-<!--                    <a href="tel:--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--">--><?php //the_field('номер_телефона_в_в_республике_казахстан', 'options');?><!--</a>-->
-<!--                    <p>в Республике Казахстан</p>-->
-<!--                </div>-->
                 <div class="d-flex flex-column mail-mob">
                     <p class="text-bold-18">E-mail</p>
                     <a href="mailto:<?php the_field('e-mail', 'options');?>"><?php the_field('e-mail', 'options');?></a>

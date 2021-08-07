@@ -274,3 +274,16 @@ function myajax_data(){
     );
 
 }
+
+function parse_video_youtube($url){
+
+    $id = preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $url, $match) ? $match[1] : '';
+
+    return $id;
+}
+function parse_phone_number ($phone_number){
+    $output_link = preg_replace('/\s/', '', $phone_number);
+    $output_link = preg_replace('/-/', '', $output_link);
+
+    return $output_link;
+}
