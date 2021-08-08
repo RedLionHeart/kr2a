@@ -41,6 +41,8 @@ input, textarea
 button
   outline: 0!important
 .button-red
+  display: block
+  margin: 0 auto
   cursor: pointer
   background: $red
   padding: 14px 50px
@@ -67,6 +69,8 @@ button
   pointer-events: none
 
 .button-white
+  display: block
+  margin: 0 auto
   cursor: pointer
   background: transparent
   padding: 14px 50px
@@ -662,6 +666,10 @@ header
     border: none
     background-color: transparent
   .video__media
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
     width: 100%
     height: 100%
     object-fit: cover
@@ -672,10 +680,7 @@ header
     padding-bottom: 64px
   .box-arrow
     position: relative
-    width: min-content
     margin: 0 auto
-    @media screen and (max-width: 991px)
-      width: 100%
     .arrow-red
       position: absolute
       right: -30px
@@ -751,11 +756,6 @@ header
           top: 0
           left: 0
       .video__media
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
         border: none
     .box-swiper-pagination
       margin-bottom: 20px
@@ -1191,8 +1191,11 @@ footer
           margin-bottom: 8px
         .button-red
           margin: 0 auto
-.entryfield:focus
+.entryfield
   outline: none
+  box-shadow: none !important
+  -moz-box-shadow: none !important
+  -webkit-box-shadow: none !important
 
 #formModalThanks, #formModalDownload
   .h5

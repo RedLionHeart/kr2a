@@ -32,6 +32,8 @@ button {
   outline: 0 !important; }
 
 .button-red {
+  display: block;
+  margin: 0 auto;
   cursor: pointer;
   background: #EE1C25;
   padding: 14px 50px;
@@ -56,6 +58,8 @@ button {
   pointer-events: none; }
 
 .button-white {
+  display: block;
+  margin: 0 auto;
   cursor: pointer;
   background: transparent;
   padding: 14px 50px;
@@ -686,6 +690,10 @@ header {
     border: none;
     background-color: transparent; }
   .box-video .video__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     object-fit: cover; }
@@ -697,11 +705,7 @@ header {
       padding-bottom: 64px; } }
   .download-specifications .box-arrow, .discount .box-arrow {
     position: relative;
-    width: min-content;
     margin: 0 auto; }
-    @media screen and (max-width: 991px) {
-      .download-specifications .box-arrow, .discount .box-arrow {
-        width: 100%; } }
     .download-specifications .box-arrow .arrow-red, .discount .box-arrow .arrow-red {
       position: absolute;
       right: -30px;
@@ -776,11 +780,6 @@ header {
         top: 0;
         left: 0; }
     .reviews .margin .box-video .video__media {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       border: none; }
   .reviews .margin .box-swiper-pagination {
     margin-bottom: 20px; }
@@ -1224,8 +1223,11 @@ footer {
       #formModalBuy .modal-dialog .modal-body .flexform .button-red, #formModalRequest .modal-dialog .modal-body .flexform .button-red, #formModalThanks .modal-dialog .modal-body .flexform .button-red, #formModalDownload .modal-dialog .modal-body .flexform .button-red {
         margin: 0 auto; }
 
-.entryfield:focus {
-  outline: none; }
+.entryfield {
+  outline: none;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important; }
 
 #formModalThanks .h5, #formModalDownload .h5 {
   text-align: center;
