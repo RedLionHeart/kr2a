@@ -247,9 +247,7 @@ $('.ajax-form, .formbuy').submit(function () {
     var phonevalid     = $(this.getElementsByClassName('phone')).val();
     var mailvalid    = $(this.getElementsByClassName('mail')).val();
     var checkvalid     = $(this.getElementsByClassName('consent')).is(":checked");
-    var formoptoin    = this.closest("form")
-    console.log(formoptoin)
-
+    var formoptoin    = this.closest("form");
 
     if(namevalid && countryvalid && organizationvalid && phonevalid && mailvalid && checkvalid &&
         phonevalid.match(/\+?[0-9]{4,}/) &&
@@ -262,6 +260,8 @@ $('.ajax-form, .formbuy').submit(function () {
             url: myajax.url_send,
             data: formData,
             type: 'POST',
+            contentType: false,
+            processData: false,
             success: function (data) {
                 if(data === 'ok'){
                     if(formoptoin.classList.contains('ajax-form')){
