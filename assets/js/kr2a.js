@@ -223,6 +223,13 @@ $('.organization').on('blur', function () {
     }
 });
 
+var buy = new bootstrap.Modal(document.getElementById('formModalBuy'), {
+    keyboard: true
+});
+
+var request = new bootstrap.Modal(document.getElementById('formModalRequest'), {
+    keyboard: true
+});
 
 var thanks = new bootstrap.Modal(document.getElementById('formModalThanks'), {
     keyboard: true
@@ -233,7 +240,7 @@ var load = new bootstrap.Modal(document.getElementById('formModalDownload'), {
 });
 
 
-$('.ajax-form, #formModalBuy').submit(function () {
+$('.ajax-form, .formbuy').submit(function () {
     var namevalid    = $(this.getElementsByClassName('name')).val();
     var countryvalid    = $(this.getElementsByClassName('country')).val();
     var organizationvalid    = $(this.getElementsByClassName('organization')).val();
@@ -243,12 +250,14 @@ $('.ajax-form, #formModalBuy').submit(function () {
     var formoptoin    = this.closest("form")
     console.log(formoptoin)
 
+
     if(namevalid && countryvalid && organizationvalid && phonevalid && mailvalid && checkvalid &&
         phonevalid.match(/\+?[0-9]{4,}/) &&
         namevalid.match(/[а-яА-Яa-zA-z]+/) &&
         mailvalid.match(/\w+[.]?\w+?@\w+?\.[a-z]{2,4}/) &&
         countryvalid.match(/[а-яА-Яa-zA-z]+/)){
         let formData = new FormData(this);
+
         $.ajax({
             url: myajax.url_send,
             data: formData,
@@ -257,8 +266,11 @@ $('.ajax-form, #formModalBuy').submit(function () {
                 if(data === 'ok'){
                     if(formoptoin.classList.contains('ajax-form')){
                         thanks.show();
-                    } else {
+                        request.hide();
+                    }
+                    if(formoptoin.classList.contains('formbuy')) {
                         load.show();
+                        buy.hide();
                     }
                 }
                 },

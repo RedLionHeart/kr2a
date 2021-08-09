@@ -131,13 +131,13 @@ $whatsapp = get_field('номер_viber', 'options');
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <label class="check-ico" id="variable">
-                                    <input class="consent" type="checkbox" id="consent" value="" autocomplete="off" name="choice">
+                                    <input class="consent" type="checkbox" onclick="check();" id="consent" value="" autocomplete="off" name="choice">
                                     <span class="d-flex align-items-center text-medium-16">Я согласен с Политикой конфиденциальности</span>
                                 </label>
                             </div>
                         </div>
                         <p>Поля, помеченные <span>*</span>, являются обязательными для заполнения</p>
-                        <button type="submit" name="submit" class="button-red" data-bs-toggle="modal" data-bs-target="#formModalBuy" disabled>Отправить</button>
+                        <button type="submit" name="submit" class="button-red" disabled>Отправить</button>
                     </form>
                 </div>
             </div>
@@ -188,7 +188,7 @@ $whatsapp = get_field('номер_viber', 'options');
                                     <img class="invalid-img" src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
                                 <label class="check-ico" id="variable">
-                                    <input class="consent" type="checkbox" id="consent" value="" autocomplete="off" name="choice">
+                                    <input class="consent" type="checkbox" onclick="check();" id="consent" value="" autocomplete="off" name="choice">
                                     <span class="d-flex align-items-center text-medium-16">Я согласен с Политикой конфиденциальности</span>
                                 </label>
                             </div>
@@ -231,7 +231,7 @@ $whatsapp = get_field('номер_viber', 'options');
                         </svg>
                     </div>
                     <h5 class="h5">Спасибо, теперь вы можете скачать файл</h5>
-                    <a target="_blank" href="https://truefactory.expert/oborydovanie/istoricheskie-stili/avtonomnaya-ustanovka-pyleudaleniya-rupes-kr2a-tehnicheskie-harakteristiki/" class="button-red">Скачать</a>
+                    <a target="_blank" href="<?= get_template_directory_uri() ?>/assets/src/files/Brochure_KR2A_RUPES.pdf" class="button-red">Скачать</a>
                 </div>
             </div>
         </div>
