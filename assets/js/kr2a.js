@@ -28,7 +28,7 @@ const swiper1 = new Swiper('.preview-swiper .swiper-container', {
 
 const swiper2 = new Swiper('.benefits .swiper-container', {
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 0,
     navigation: {
         nextEl: '.benefits .swiper-button-next',
         prevEl: '.benefits .swiper-button-prev',

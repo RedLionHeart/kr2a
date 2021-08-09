@@ -719,6 +719,10 @@ header {
     right: -18px;
     bottom: -18px; }
 
+.box-arrow {
+  width: fit-content;
+  width: -moz-fit-content; }
+
 .production-options {
   padding-bottom: 80px; }
   .production-options .margin .h2-source {
@@ -798,12 +802,10 @@ header {
   padding: 100px 0; }
   .questions .box-arrow {
     position: relative;
-    width: min-content;
     margin: 0 auto 72px; }
     @media screen and (max-width: 991px) {
       .questions .box-arrow {
-        margin: 0 auto 64px;
-        width: 100%; } }
+        margin: 0 auto 64px; } }
     .questions .box-arrow .arrow-red {
       position: absolute;
       right: -30px;

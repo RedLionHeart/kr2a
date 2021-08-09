@@ -291,7 +291,7 @@ get_header();
                                     $cuted_url_video = parse_video_youtube($src); ?>
                                 <div class="swiper-slide">
 
-                                    <div class="d-flex flex-column box-img">
+                                    <div class="d-flex flex-column align-items-center box-img">
                                         <div class="box-video">
                                             <div class="video__link">
                                                 <img class="video__media" src="https://i.ytimg.com/vi/<?php echo $cuted_url_video;?>/maxresdefault.jpg">
