@@ -272,6 +272,7 @@ $('.ajax-form, .formbuy').submit(function () {
                         load.show();
                         buy.hide();
                     }
+                    $('formoptoin').trigger('reset');
                 }
                 },
             error: function (data) {
