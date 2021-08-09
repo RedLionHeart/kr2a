@@ -98,6 +98,7 @@ $whatsapp = get_field('номер_viber', 'options');
                     <h2 class="h2">Скачать файл</h2>
                     <p>Для скачивания документа, пожалуйста, заполните форму</p>
                     <form action="/" class="d-flex flex-column formbuy" method="post">
+                        <input type="hidden" name="email_to" value="<?= get_field('email_для_заявок', 'options');?>">
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">
@@ -155,6 +156,7 @@ $whatsapp = get_field('номер_viber', 'options');
                     <h2 class="h2">Где купить</h2>
                     <p>Для получения информации, пожалуйста, заполните форму</p>
                     <form action="/" class="d-flex flex-column ajax-form" method="post">
+                        <input type="hidden" name="email_to" value="<?= get_field('email_для_заявок', 'options');?>">
                         <div class="d-flex justify-content-between box-entryfield">
                             <div class="d-flex flex-column">
                                 <div class="input-valid">

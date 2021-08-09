@@ -260,6 +260,7 @@ $('.ajax-form, .formbuy').submit(function () {
             url: myajax.url_send,
             data: formData,
             type: 'POST',
+            contentType: false,
             processData: false,
             success: function (data) {
                 if(data === 'ok'){
