@@ -1038,7 +1038,8 @@ header {
   background: transparent; }
 
 .ico-box {
-  width: 122px; }
+  width: 122px;
+  flex-direction: row !important; }
   .ico-box a {
     margin: 0 !important; }
 
