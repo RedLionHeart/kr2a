@@ -36,7 +36,7 @@ button {
   margin: 0 auto;
   cursor: pointer;
   background: #EE1C25;
-  padding: 14px 50px;
+  padding: 14px 30px;
   border: 2px solid #EE1C25;
   color: white;
   transition: 0.2s;
@@ -62,7 +62,7 @@ button {
   margin: 0 auto;
   cursor: pointer;
   background: transparent;
-  padding: 14px 50px;
+  padding: 14px 30px;
   border: 2px solid #EE1C25;
   color: #EE1C25;
   transition: 0.2s;
@@ -959,10 +959,6 @@ header {
     color: #4F4F4F !important;
     -webkit-text-fill-color: #4F4F4F !important; }
   .form-contacts form .valid, .modal form .valid {
-    background-image: url("/img/valid.svg") !important;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 24px;
     border-bottom: 2px solid #228007; }
   .form-contacts form .valid-img, .form-contacts form .invalid-img, .modal form .valid-img, .modal form .invalid-img {
     display: none;
