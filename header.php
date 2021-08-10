@@ -30,10 +30,10 @@
             </div>
             <div class="d-flex language">
                 <div>
-                    <a class="active-lang" href="#">RU</a>
+                    <span class="active-lang">RU</span>
                 </div>
                 <div>
-                    <a href="#">UKR</a>
+                    <a href="https://kr2a.com.ua/">UKR</a>
                 </div>
             </div>
             </div>
