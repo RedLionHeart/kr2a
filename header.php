@@ -33,7 +33,7 @@
                     <span class="link-lang">RU</span>
                 </div>
                 <div class="d-flex align-items-center">
-                    <a class="link-lang" href="#">UKR</a>
+                    <a class="link-lang" href="https://kr2a.com.ua/">UKR</a>
                 </div>
             </div>
             </div>
