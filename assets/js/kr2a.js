@@ -224,7 +224,7 @@ $('.ajax-form, .formbuy').submit(function () {
 function check() {
     var consent = document.getElementsByClassName('consent');
     for (var i = 0; i < consent.length; i++) {
-        var form = consent[i].closest("form")
+        var form = consent[i].closest("form");
         if (consent[i].checked)
             form.querySelector("button").disabled = '';
         else form.querySelector("button").disabled = 'disabled';
@@ -247,7 +247,6 @@ function setupVideo(video) {
 
     video.addEventListener('click', () => {
         let iframe = this.createIframe(id);
-        console.log(link)
 
         link.remove();
         button.remove();
@@ -259,11 +258,7 @@ function setupVideo(video) {
 }
 
 function parseMediaURL(media) {
-    let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
-    let url = media.src;
-    let match = url.match(regexp);
-
-    return match[1];
+    return media.dataset.src;
 }
 
 function createIframe(id) {
