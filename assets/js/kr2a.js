@@ -173,7 +173,7 @@ var load = new bootstrap.Modal(document.getElementById('formModalDownload'), {
     keyboard: true
 });
 
-
+$('.ajax-form, .formbuy').trigger('reset');
 $('.ajax-form, .formbuy').submit(function () {
     var namevalid    = $(this.getElementsByClassName('name')).val();
     var countryvalid    = $(this.getElementsByClassName('country')).val();
