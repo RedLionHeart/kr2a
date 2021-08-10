@@ -195,18 +195,20 @@ button {
       font-size: 20px;
       line-height: 30px; } }
 
-.language a {
+.language .link-lang {
   font-family: "Raleway-Bold", sans-serif;
   font-size: 12px;
   line-height: 14px;
   color: #BDBDBD;
   transition: 0.5s; }
-.language .active-lang {
-  color: #EE1C25; }
 .language div:nth-child(1) {
   margin-right: 8px;
   padding-right: 8px;
   border-right: 2px solid #BDBDBD; }
+  .language div:nth-child(1) .link-lang {
+    color: #EE1C25; }
+.language a {
+  display: block; }
 
 .logo {
   font-family: "SourceCodePro-Black", sans-serif;
@@ -275,11 +277,20 @@ header {
       padding: 16px 0; } }
   header .margin .logo-lang {
     width: 203px; }
+    @media screen and (max-width: 1240px) {
+      header .margin .logo-lang {
+        width: 180px; } }
+    @media screen and (max-width: 991px) {
+      header .margin .logo-lang {
+        width: 150px; } }
   @media screen and (max-width: 991px) {
     header .margin nav {
       display: none; } }
   header .margin nav ul {
     width: 800px; }
+    @media screen and (max-width: 1240px) {
+      header .margin nav ul {
+        width: 700px; } }
   header .button-burger {
     cursor: pointer;
     background: transparent;

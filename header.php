@@ -29,11 +29,11 @@
                 <a class="logo" href="#preview-swiper">KR2A</a>
             </div>
             <div class="d-flex language">
-                <div>
-                    <a class="active-lang" href="#">RU</a>
+                <div class="d-flex align-items-center">
+                    <span class="link-lang">RU</span>
                 </div>
-                <div>
-                    <a href="#">UKR</a>
+                <div class="d-flex align-items-center">
+                    <a class="link-lang" href="#">UKR</a>
                 </div>
             </div>
             </div>

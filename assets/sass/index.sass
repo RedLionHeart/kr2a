@@ -199,18 +199,20 @@ button
     line-height: 30px
 
 .language
-  a
+  .link-lang
     font-family: 'Raleway-Bold', sans-serif
     font-size: 12px
     line-height: 14px
     color: $gray4
     transition: .5s
-  .active-lang
-    color: $red
   div:nth-child(1)
     margin-right: 8px
     padding-right: 8px
     border-right: 2px solid $gray4
+    .link-lang
+      color: $red
+  a
+    display: block
 
 
 
@@ -273,11 +275,17 @@ header
   .margin
     .logo-lang
       width: 203px
+      @media screen and (max-width: 1240px)
+        width: 180px
+      @media screen and (max-width: 991px)
+        width: 150px
     nav
       @media screen and (max-width: 991px)
         display: none
       ul
         width: 800px
+        @media screen and (max-width: 1240px)
+          width: 700px
   .button-burger
     cursor: pointer
     background: transparent
