@@ -24,8 +24,18 @@
 <header>
     <div class="margin">
         <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center justify-content-between logo-lang">
             <div class="logo-top">
                 <a class="logo" href="#preview-swiper">KR2A</a>
+            </div>
+            <div class="d-flex language">
+                <div>
+                    <a class="active-lang" href="#">RU</a>
+                </div>
+                <div>
+                    <a href="#">UKR</a>
+                </div>
+            </div>
             </div>
             <nav>
                 <ul class="d-flex justify-content-between">
