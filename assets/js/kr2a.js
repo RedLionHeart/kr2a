@@ -13,17 +13,6 @@ const swiper1 = new Swiper('.preview-swiper .swiper-container', {
         clickable: true,
         el: ".preview-swiper .swiper-pagination",
     }
-    // breakpoints: {
-    //     1440: {
-    //         slidesPerView: 4,
-    //     },
-    //     1150: {
-    //         slidesPerView: 3,
-    //     },
-    //     900: {
-    //         slidesPerView: 3,
-    //     },
-    // }
 });
 
 const swiper2 = new Swiper('.benefits .swiper-container', {
@@ -44,17 +33,6 @@ const swiper2 = new Swiper('.benefits .swiper-container', {
             return '<span class="' + className + '">' + (index + 1) + "</span>";
         },
     }
-    // breakpoints: {
-    //     1440: {
-    //         slidesPerView: 4,
-    //     },
-    //     1150: {
-    //         slidesPerView: 3,
-    //     },
-    //     900: {
-    //         slidesPerView: 3,
-    //     },
-    // }
 });
 
 const swiper3 = new Swiper('.reviews .swiper-container', {
@@ -71,17 +49,6 @@ const swiper3 = new Swiper('.reviews .swiper-container', {
             return '<span class="' + className + '">' + (index + 1) + "</span>";
         },
     }
-    // breakpoints: {
-    //     1440: {
-    //         slidesPerView: 4,
-    //     },
-    //     1150: {
-    //         slidesPerView: 3,
-    //     },
-    //     900: {
-    //         slidesPerView: 3,
-    //     },
-    // }
 });
 
 
@@ -100,33 +67,6 @@ $('nav a, .button-up a').click(function () {
     }
 });
 
-// let positions = [],
-//     currentActive = null,
-//     links = $('header nav a');
-//
-// $("section").each(function () {
-//     positions.push({
-//         top: $(this).position().top - 500,
-//         a: links.filter('[href="#' + $(this).attr('id') + '"]')
-//     });
-// });
-//
-// positions = positions.reverse();
-//
-// $(window).on('scroll', function () {
-//     var winTop = $(window).scrollTop();
-//     for (var i = 0; i < positions.length; i++) {
-//         if (positions[i].top < winTop) {
-//             if (currentActive !== i) {
-//                 currentActive = i;
-//                 links.filter('.active-nav').removeClass('active-nav');
-//                 positions[i].a.addClass("active-nav");
-//             }
-//             break;
-//         }
-//     }
-// });
-
 
 $('.button-collapse').click(function () {
     if ($(this).closest('.box-collapse').hasClass("active-collapse")) {
@@ -136,16 +76,6 @@ $('.button-collapse').click(function () {
         $(this).closest('.box-collapse').toggleClass("active-collapse");
     }
 });
-
-// window.onscroll = function() {
-//     let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-//     if(scrolled > 2){
-//         $("header").addClass('header-scroll');
-//     }
-//     if(2 > scrolled){
-//         $("header").removeClass('header-scroll');
-//     }
-// };
 
 // $('.input-mask__phone').inputmask('+375 (99) 999-99-99');
 $('.input-mask__mail').inputmask({alias: "email"});
@@ -243,7 +173,7 @@ var load = new bootstrap.Modal(document.getElementById('formModalDownload'), {
     keyboard: true
 });
 
-
+$('.ajax-form, .formbuy').trigger('reset');
 $('.ajax-form, .formbuy').submit(function () {
     var namevalid    = $(this.getElementsByClassName('name')).val();
     var countryvalid    = $(this.getElementsByClassName('country')).val();
@@ -294,42 +224,12 @@ $('.ajax-form, .formbuy').submit(function () {
 function check() {
     var consent = document.getElementsByClassName('consent');
     for (var i = 0; i < consent.length; i++) {
-        var form = consent[i].closest("form")
+        var form = consent[i].closest("form");
         if (consent[i].checked)
             form.querySelector("button").disabled = '';
         else form.querySelector("button").disabled = 'disabled';
     }
 }
-
-// $.ajax({
-//     url: myajax.url_send,
-//     data: $('.modal').serialize(),
-//     type: 'POST',
-//     success: function (data) {
-//         if(data === 'ok'){
-//             thanks.show();
-//         }
-//     },
-//     error: function (data) {
-//         alert("Данные не отправленны");
-//     }
-// });
-
-// $('#formModalBuy').submit(function () {
-//     $.ajax({
-//         url: './js/action_ajax_form.php',
-//         data: $('.modal').serialize(),
-//         type: 'POST',
-//         success: function (data) {
-//             if(data === 'ok'){
-//                 load.show();
-//             }
-//         },
-//         error: function(data) { // Данные не отправлены
-//             alert("Данные не отправленны")
-//         }
-//     });
-// });
 
 // function findVideos() {
 let videos = document.querySelectorAll('.box-video');
@@ -347,7 +247,6 @@ function setupVideo(video) {
 
     video.addEventListener('click', () => {
         let iframe = this.createIframe(id);
-        console.log(link)
 
         link.remove();
         button.remove();
@@ -359,11 +258,7 @@ function setupVideo(video) {
 }
 
 function parseMediaURL(media) {
-    let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
-    let url = media.src;
-    let match = url.match(regexp);
-
-    return match[1];
+    return media.dataset.src;
 }
 
 function createIframe(id) {
