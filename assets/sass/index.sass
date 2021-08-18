@@ -503,14 +503,20 @@ header
         left: 960px
         transform: rotate(180deg)
         transition: .5s
+        @media screen and (max-width: 1240px)
+          top: 13px
+          left: 882px
         img
           display: block
-        @media screen and (max-width: 700px)
+        @media screen and (max-width: 991px)
           display: none
     .img-chart:hover
       .arrow-red
         top: 22px
         left: 955px
+        @media screen and (max-width: 1240px)
+          top: 19px
+          left: 872px
     .description-chart
       width: 1027px
       margin: 40px auto 0

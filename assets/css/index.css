@@ -518,14 +518,22 @@ header {
         left: 960px;
         transform: rotate(180deg);
         transition: 0.5s; }
+        @media screen and (max-width: 1240px) {
+          .benefits .box-chart .img-chart .arrow-red {
+            top: 13px;
+            left: 882px; } }
         .benefits .box-chart .img-chart .arrow-red img {
           display: block; }
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 991px) {
           .benefits .box-chart .img-chart .arrow-red {
             display: none; } }
     .benefits .box-chart .img-chart:hover .arrow-red {
       top: 22px;
       left: 955px; }
+      @media screen and (max-width: 1240px) {
+        .benefits .box-chart .img-chart:hover .arrow-red {
+          top: 19px;
+          left: 872px; } }
     .benefits .box-chart .description-chart {
       width: 1027px;
       margin: 40px auto 0; }
