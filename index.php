@@ -231,8 +231,7 @@ get_header();
         <div class="margin">
             <div class="box-arrow">
                 <!--                <button class="button-white button-big" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать лист технических характеристик Rupes KR2A</button>-->
-                <a target="_blank"
-                   href="https://truefactory.expert/oborydovanie/istoricheskie-stili/avtonomnaya-ustanovka-pyleudaleniya-rupes-kr2a-tehnicheskie-harakteristiki/ "
+                <a target="_blank" href="<?= get_template_directory_uri() ?>/assets/src/files/Rupes_KR2A.pdf"
                    class="button-white button-big">Скачать лист технических характеристик Rupes KR2A</a>
                 <div class="arrow-red">
                     <img src="<?= get_template_directory_uri() ?>/assets/img/arrow_red.svg">
