@@ -471,11 +471,16 @@ get_header();
                                     <img class="invalid-img"
                                          src="<?= get_template_directory_uri() ?>/assets/img/invalid.svg">
                                 </div>
+                                <div class="d-flex align-items-center box-check-ico">
                                 <label class="check-ico" id="variable">
                                     <input class="consent" type="checkbox" onclick="check();" id="consent" value=""
                                            autocomplete="off" name="choice" required>
-                                    <span class="d-flex align-items-center text-medium-16">Я согласен с Политикой конфиденциальности</span>
+                                    <span class="d-flex align-items-center text-medium-16"></span>
                                 </label>
+                                    <div class="d-flex flex-wrap">
+                                    <p class="text-medium-16">Я согласен с</p><a class="text-medium-16" target="_blank" href="<?= get_template_directory_uri() ?>/assets/src/files/kr2a_ru.pdf">Политикой конфиденциальности</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" name="submit" class="button-red" disabled>Отправить</button>

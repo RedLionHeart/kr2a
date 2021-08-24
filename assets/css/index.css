@@ -1048,10 +1048,20 @@ header {
   .ico-box a {
     margin: 0 !important; }
 
+.box-check-ico {
+  margin-bottom: 30px; }
+  .box-check-ico p {
+    margin-right: 5px; }
+  .box-check-ico a {
+    color: #4F4F4F;
+    transition: 0.5s; }
+  .box-check-ico a:hover {
+    text-decoration: underline;
+    color: #4F4F4F; }
+
 .check-ico {
   position: relative;
-  cursor: pointer;
-  margin-bottom: 30px; }
+  cursor: pointer; }
   .check-ico input {
     position: absolute;
     z-index: -1;
