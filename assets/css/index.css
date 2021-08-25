@@ -374,6 +374,7 @@ header {
           .preview-swiper .margin .swiper .slide1 .img-swiper img, .preview-swiper .margin .swiper .slide2 .img-swiper img {
             height: 436px; } }
       .preview-swiper .margin .swiper .slide1 .info-swiper, .preview-swiper .margin .swiper .slide2 .info-swiper {
+        position: relative;
         z-index: 2;
         margin-top: 145px; }
         @media screen and (max-width: 1240px) {
@@ -433,6 +434,7 @@ header {
         .preview-swiper .margin .swiper .slide1 .swiper-pagination .swiper-pagination-bullet, .preview-swiper .margin .swiper .slide2 .swiper-pagination .swiper-pagination-bullet {
           width: 44px;
           height: 5px;
+          margin: 0;
           background: #F0F0F0;
           opacity: 1; }
         .preview-swiper .margin .swiper .slide1 .swiper-pagination .swiper-pagination-bullet:nth-child(1), .preview-swiper .margin .swiper .slide2 .swiper-pagination .swiper-pagination-bullet:nth-child(1) {
