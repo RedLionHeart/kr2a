@@ -1,4 +1,4 @@
-const swiper1 = new Swiper('.preview-swiper .swiper-container', {
+const swiper1 = new Swiper('.preview-swiper .swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
@@ -15,7 +15,7 @@ const swiper1 = new Swiper('.preview-swiper .swiper-container', {
     }
 });
 
-const swiper2 = new Swiper('.benefits .swiper-container', {
+const swiper2 = new Swiper('.benefits .swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     autoplay: {
@@ -35,7 +35,7 @@ const swiper2 = new Swiper('.benefits .swiper-container', {
     }
 });
 
-const swiper3 = new Swiper('.reviews .swiper-container', {
+const swiper3 = new Swiper('.reviews .swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
     navigation: {

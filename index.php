@@ -7,7 +7,7 @@ get_header();
 
     <section class="preview-swiper" id="preview-swiper">
         <div class="margin">
-            <div class="swiper-container">
+            <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="d-flex slide1">
@@ -112,7 +112,7 @@ get_header();
                         'numberposts' => -1,
                     ));
                     ?>
-                    <div class="swiper-container">
+                    <div class="swiper">
                         <div class="swiper-wrapper">
                             <?php foreach ($benefits as $post):
                                 setup_postdata($post);
@@ -296,7 +296,7 @@ get_header();
                                 </svg>
                             </div>
                         </div>
-                        <div class="swiper-container">
+                        <div class="swiper">
                             <div class="swiper-wrapper">
                                 <?php
                                 $reviews = get_posts(array(
