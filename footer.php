@@ -49,6 +49,7 @@ $whatsapp = get_field('номер_viber', 'options');
                 <a target="_blank" href="https://truefactory.expert/oborydovanie/istoricheskie-stili/avtonomnaya-ustanovka-pyleudaleniya-rupes-kr2a-tehnicheskie-harakteristiki/ ">Скачать лист технических характеристик Rupes KR2A</a>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#formModalBuy">Скачать дополнительную информацию</a>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#formModalRequest">Стоимость установки в вашем регионе</a>
+                <a class="text-medium-16" target="_blank" href="<?= get_template_directory_uri() ?>/assets/src/files/kr2a_ru.pdf">Политика конфиденциальности</a>
             </div>
             <div class="d-flex flex-column tel">
                 <p class="text-bold-18">Контакты</p>
