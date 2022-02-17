@@ -11,7 +11,7 @@
 
 $telega = get_field('telegram', 'options');
 $viber = get_field('номер_viber', 'options');
-$whatsapp = get_field('номер_viber', 'options');
+$whatsapp = get_field('номер_whatsapp', 'options');
 
 ?>
 <footer>

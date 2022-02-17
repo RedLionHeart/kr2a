@@ -216,7 +216,7 @@ get_header();
             </div>
             <div class="box-video">
                 <div class="video__link">
-                    <img class="video__media" src="https://i.ytimg.com/vi/cdf1OpL7-_4/maxresdefault.jpg">
+                    <img data-src="cdf1OpL7-_4" class="video__media" src="https://i.ytimg.com/vi/cdf1OpL7-_4/maxresdefault.jpg">
                 </div>
                 <button class="video__button" aria-label="запустить видео">
                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -499,7 +499,7 @@ get_header();
                             <?php
                             $telega = get_field('telegram', 'options');
                             $viber = get_field('номер_viber', 'options');
-                            $whatsapp = get_field('номер_viber', 'options');
+                            $whatsapp = get_field('номер_whatsapp', 'options');
                             ?>
                             <div class="d-flex justify-content-between ico-box">
                                 <?php if ($telega): ?>
